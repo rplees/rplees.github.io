@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JS on 星辰的博客</title>
+    <link>https://www.rplees.com/tags/JS/</link>
+    <description>Recent content in JS on 星辰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://www.rplees.com/tags/JS/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JS面试题</title>
+      <link>https://www.rplees.com/post/JS%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.rplees.com/post/JS%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <description>下面的代码输出什么 1 2 3 4 var x; // 声明 x console.log(x); console.log(typeof y); console.log(z); 下面的代码输出什么？ 1 2 3 4 5 var y = 1; if (function f(){}) { y += typeof f; } console.log(y); JavaScript中什么是闭包？ 写一个mul函数，使用方法如下。 1 2 console.log(mul(2)(3)(4)); // output : 24 console.log(mul(4)(3)(4)); // output : 48 JavaScript怎么清空数组？ 怎么判断一个object是否是数组(array) 下面</description>
+    </item>
+    
+  </channel>
+</rss>

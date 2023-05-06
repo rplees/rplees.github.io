@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on 星辰的博客</title>
+    <link>/categories/Java/</link>
+    <description>Recent content in Java on 星辰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="/categories/Java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java工程师面试题</title>
+      <link>/post/Java%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Thu, 25 Feb 2016 17:20:58 +0000</pubDate>
+      
+      <guid>/post/Java%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <description>#Java工程师面试题 1、下面哪些是Thread类的方法（ ） A、start() B、 run() C、exit() D、 getPriority() 2、下列说法正确的有（ ） A． class中的constructor不可省略 B． constructor必须与class同名，但方法不能与class同名 C． constructor在</description>
+    </item>
+    
+    <item>
+      <title>Java工程师面试题-有答案</title>
+      <link>/post/Java%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%9C%89%E7%AD%94%E6%A1%88/</link>
+      <pubDate>Thu, 25 Feb 2016 17:20:58 +0000</pubDate>
+      
+      <guid>/post/Java%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%9C%89%E7%AD%94%E6%A1%88/</guid>
+      <description>#Java工程师面试题-有答案 1、下面哪些是Thread类的方法（ ABD ） A、start() B、 run() C、exit() D、 getPriority() 2、下列说法正确的有（ C ） A． class中的constructor不可省略 B． constructor必须与class同名，但方法不能与class同名 C． constr</description>
+    </item>
+    
+  </channel>
+</rss>

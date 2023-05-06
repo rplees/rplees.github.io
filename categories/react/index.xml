@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>react on 星辰的博客</title>
+    <link>/categories/react/</link>
+    <description>Recent content in react on 星辰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 17 Feb 2016 11:20:58 +0000</lastBuildDate><atom:link href="/categories/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SublimeText 3 搭建 React.js 开发环境</title>
+      <link>/post/sublime-text-3%E6%90%AD%E5%BB%BA-react.js-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</link>
+      <pubDate>Wed, 17 Feb 2016 11:20:58 +0000</pubDate>
+      
+      <guid>/post/sublime-text-3%E6%90%AD%E5%BB%BA-react.js-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</guid>
+      <description>转载来源 Sublime Text 3 搭建 React.js 开发环境 Sublime有很强的自定义功能，插件库很庞大，针对新语言插件更新很快，配合使用可以快速搭建适配语言的开发环境。 babel-sublime 支持ES6， React.js, jsx代码高亮，对 JavaScript, jQuery 也有很好的扩展。关于 babel 的更多介绍可以看这里：为什么说Babel将推动JavaScript的发展 安装 PC</description>
+    </item>
+    
+  </channel>
+</rss>

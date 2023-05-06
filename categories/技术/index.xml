@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术 on 星辰的博客</title>
+    <link>/categories/%E6%8A%80%E6%9C%AF/</link>
+    <description>Recent content in 技术 on 星辰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="/categories/%E6%8A%80%E6%9C%AF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JS面试题</title>
+      <link>/post/JS%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/JS%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <description>下面的代码输出什么 1 2 3 4 var x; // 声明 x console.log(x); console.log(typeof y); console.log(z); 下面的代码输出什么？ 1 2 3 4 5 var y = 1; if (function f(){}) { y += typeof f; } console.log(y); JavaScript中什么是闭包？ 写一个mul函数，使用方法如下。 1 2 console.log(mul(2)(3)(4)); // output : 24 console.log(mul(4)(3)(4)); // output : 48 JavaScript怎么清空数组？ 怎么判断一个object是否是数组(array) 下面</description>
+    </item>
+    
+    <item>
+      <title>后台技术架构文档</title>
+      <link>/post/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E6%96%87%E6%A1%A3/</guid>
+      <description>后台技术架构文档-精洲华娱 文档归公司内部使用 开发模式- 小步快走，快速迭代 使用敏捷开发模式开发,敏捷方法是试图通过小型的. 自我管理的团队用短小的合作发布周期来鼓励迭代式软件开发方法.软件的质量贯穿敏捷软件开发每一个阶段.且非常重要,来保证能在每一个迭代周期内及早是的发现并及时相应消</description>
+    </item>
+    
+    <item>
+      <title>前端开发面试题</title>
+      <link>/post/HTML%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/HTML%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <description>前端开发面试题 前端开发知识点： HTML&amp;amp;CSS： 对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级、 HTML5、CSS3、Flexbox JavaScript： 数据类型、运算、对象、Function、继承、闭包、作用域、原型链、</description>
+    </item>
+    
+    <item>
+      <title>ReactNative技术分享</title>
+      <link>/post/react-native%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Fri, 28 Oct 2016 09:20:58 +0000</pubDate>
+      
+      <guid>/post/react-native%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</guid>
+      <description>React-Native介绍 LEARN ONCE, WRITE ANYWHERE: BUILD MOBILE APPS WITH REACT 优点: 复用了 React 的思想，有利于前端开发者涉足移动端。 能够利用 JavaScript 动态更新的特性，快速迭代。 相比于原生平台，开发速度更快，相比于 Hybrid 框架，性能更好。 缺点: 做不到 Write once, Run everywhere，也就是说开发者依然需要为 iOS 和 Android 平台提供两套不同的代码，</description>
+    </item>
+    
+    <item>
+      <title>ReactJS技术分享</title>
+      <link>/post/reactjs%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Mon, 17 Oct 2016 09:20:58 +0000</pubDate>
+      
+      <guid>/post/reactjs%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</guid>
+      <description>React的定义与原理 React是一个用于构建用户界面的JavaScript库，而不是一个MVC框架，但可以使用React作为MVC架构的View层轻易的在已有项目中使用。 官方定义 A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES(一个用于构建用户界面的JavaScript库) 为什么用React 高</description>
+    </item>
+    
+    <item>
+      <title>Java工程师面试题</title>
+      <link>/post/Java%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Thu, 25 Feb 2016 17:20:58 +0000</pubDate>
+      
+      <guid>/post/Java%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <description>#Java工程师面试题 1、下面哪些是Thread类的方法（ ） A、start() B、 run() C、exit() D、 getPriority() 2、下列说法正确的有（ ） A． class中的constructor不可省略 B． constructor必须与class同名，但方法不能与class同名 C． constructor在</description>
+    </item>
+    
+    <item>
+      <title>Java工程师面试题-有答案</title>
+      <link>/post/Java%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%9C%89%E7%AD%94%E6%A1%88/</link>
+      <pubDate>Thu, 25 Feb 2016 17:20:58 +0000</pubDate>
+      
+      <guid>/post/Java%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%9C%89%E7%AD%94%E6%A1%88/</guid>
+      <description>#Java工程师面试题-有答案 1、下面哪些是Thread类的方法（ ABD ） A、start() B、 run() C、exit() D、 getPriority() 2、下列说法正确的有（ C ） A． class中的constructor不可省略 B． constructor必须与class同名，但方法不能与class同名 C． constr</description>
+    </item>
+    
+    <item>
+      <title>ReactNative环境搭建</title>
+      <link>/post/react-native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Thu, 14 Jan 2016 11:20:58 +0000</pubDate>
+      
+      <guid>/post/react-native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>React Native环境搭建 前期准备环境 brew 安装 brew 在官方网站对brew的用法进行了详细的描述,是一款更方便的下载软件库的软件，类似于centos的yum。 安装方法：在Mac中打开Termal: 输入命令 1 ruby -e &amp;#34;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&amp;#34; 使用方法： 1 2 3 brew install wget brew uninstall wget brew search /wge*/ node.js 安装 以下是官方定义: 1 Node.js® is</description>
+    </item>
+    
+  </channel>
+</rss>

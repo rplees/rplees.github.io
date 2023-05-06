@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML on 星辰的博客</title>
+    <link>/categories/HTML/</link>
+    <description>Recent content in HTML on 星辰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="/categories/HTML/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端开发面试题</title>
+      <link>/post/HTML%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/HTML%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
+      <description>前端开发面试题 前端开发知识点： HTML&amp;amp;CSS： 对Web标准的理解、浏览器内核差异、兼容性、hack、CSS基本功：布局、盒子模型、选择器优先级、 HTML5、CSS3、Flexbox JavaScript： 数据类型、运算、对象、Function、继承、闭包、作用域、原型链、</description>
+    </item>
+    
+  </channel>
+</rss>

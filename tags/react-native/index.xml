@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>react-native on 星辰的博客</title>
+    <link>/tags/react-native/</link>
+    <description>Recent content in react-native on 星辰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 28 Oct 2016 09:20:58 +0000</lastBuildDate><atom:link href="/tags/react-native/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ReactNative技术分享</title>
+      <link>/post/react-native%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Fri, 28 Oct 2016 09:20:58 +0000</pubDate>
+      
+      <guid>/post/react-native%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</guid>
+      <description>React-Native介绍 LEARN ONCE, WRITE ANYWHERE: BUILD MOBILE APPS WITH REACT 优点: 复用了 React 的思想，有利于前端开发者涉足移动端。 能够利用 JavaScript 动态更新的特性，快速迭代。 相比于原生平台，开发速度更快，相比于 Hybrid 框架，性能更好。 缺点: 做不到 Write once, Run everywhere，也就是说开发者依然需要为 iOS 和 Android 平台提供两套不同的代码，</description>
+    </item>
+    
+    <item>
+      <title>ReactJS技术分享</title>
+      <link>/post/reactjs%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Mon, 17 Oct 2016 09:20:58 +0000</pubDate>
+      
+      <guid>/post/reactjs%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/</guid>
+      <description>React的定义与原理 React是一个用于构建用户界面的JavaScript库，而不是一个MVC框架，但可以使用React作为MVC架构的View层轻易的在已有项目中使用。 官方定义 A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES(一个用于构建用户界面的JavaScript库) 为什么用React 高</description>
+    </item>
+    
+    <item>
+      <title>ReactNative环境搭建</title>
+      <link>/post/react-native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Thu, 14 Jan 2016 11:20:58 +0000</pubDate>
+      
+      <guid>/post/react-native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description>React Native环境搭建 前期准备环境 brew 安装 brew 在官方网站对brew的用法进行了详细的描述,是一款更方便的下载软件库的软件，类似于centos的yum。 安装方法：在Mac中打开Termal: 输入命令 1 ruby -e &amp;#34;$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)&amp;#34; 使用方法： 1 2 3 brew install wget brew uninstall wget brew search /wge*/ node.js 安装 以下是官方定义: 1 Node.js® is</description>
+    </item>
+    
+  </channel>
+</rss>

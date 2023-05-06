@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>SublimeText 3 搭建 React.js 开发环境 | 星辰的博客</title>
+    <meta property="og:title" content="SublimeText 3 搭建 React.js 开发环境 - 星辰的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2016-02-17T11:20:58&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2016-02-17T11:20:58&#43;08:00'>
+        
+    <meta name="Keywords" content="星辰,java,博客,项目管理,软件架构,公众号,小程序">
+    <meta name="description" content="SublimeText 3 搭建 React.js 开发环境">
+        
+    <meta name="author" content="星辰">
+    <meta property="og:url" content="/post/sublime-text-3%E6%90%AD%E5%BB%BA-react.js-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    <script data-ad-client="ca-pub-5711802330867714" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    
+    
+    
+    
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="/">
+                        星辰的博客
+                    </a>
+                
+                <p class="description">天行健君子以自强不息－专注于Android、Java、Go语言(golang)、移动互联网、项目管理、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="/">首页</a>
+                    
+                    <a  href="/tools/" title="工具">工具</a>
+                    
+                    <a  href="/archives/" title="归档">归档</a>
+                    
+                    <a  href="/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#转载来源httpwwwcnblogscomterrylinp4942332html"><a href="http://www.cnblogs.com/terrylin/p/4942332.html">转载来源</a></a></li>
+    <li><a href="#sublime-text-3-搭建-reactjs-开发环境">Sublime Text 3 搭建 React.js 开发环境</a></li>
+    <li><a href="#babel-sublimehttpwwwcnblogscomterrylinp4942332html"><a href="http://www.cnblogs.com/terrylin/p/4942332.html">babel-sublime</a></a></li>
+    <li><a href="#sublimelinter-jsxhinthttpspackagecontroliopackagessublimelinter-jsxhint"><a href="https://packagecontrol.io/packages/SublimeLinter-jsxhint">sublimeLinter-jsxhint</a></a></li>
+    <li><a href="#修改-emmethttpdocsemmetio-兼容jsx-文件">修改 <a href="http://docs.emmet.io/">Emmet</a> 兼容jsx 文件</a></li>
+    <li><a href="#jsformathttpsgithubcomjdc0589jsformat-格式化-js-代码"><a href="https://github.com/jdc0589/JsFormat">JsFormat</a> 格式化 js 代码</a></li>
+    <li><a href="#编译-jsx">编译 jsx</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">SublimeText 3 搭建 React.js 开发环境</h1>
+        </header>
+        
+  <time datetime="2016-02-17T11:20:58Z" class="post-meta meta-date dt-published">
+    2016年2月17日
+  </time>
+
+
+<div class="post-meta meta-category">
+  <span>&nbsp;|</span>
+  
+    <a href='/categories/sublimetext' target="_blank">sublimetext</a>
+  
+    <a href='/categories/react' target="_blank">react</a>
+  
+    <a href='/categories/%E6%90%AD%E5%BB%BA' target="_blank">搭建</a>
+  
+</div>
+
+
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">&nbsp;|
+                <span id="busuanzi_value_page_pv"></span> <span>阅读</span>
+            </span>
+        </div>
+        
+        
+        <div class="post-content">
+            <h2 id="转载来源httpwwwcnblogscomterrylinp4942332html"><a href="http://www.cnblogs.com/terrylin/p/4942332.html">转载来源</a></h2>
+<h2 id="sublime-text-3-搭建-reactjs-开发环境">Sublime Text 3 搭建 React.js 开发环境</h2>
+<p>Sublime有很强的自定义功能，插件库很庞大，针对新语言插件更新很快，配合使用可以快速搭建适配语言的开发环境。</p>
+<h2 id="babel-sublimehttpwwwcnblogscomterrylinp4942332html"><a href="http://www.cnblogs.com/terrylin/p/4942332.html">babel-sublime</a></h2>
+<p>支持ES6， React.js, jsx代码高亮，对 JavaScript, jQuery 也有很好的扩展。关于 babel 的更多介绍可以看这里：<a href="http://www.infoq.com/cn/news/2015/05/ES6-TypeScript">为什么说Babel将推动JavaScript的发展</a></p>
+<p>安装</p>
+<ul>
+<li>
+<p>PC：Ctrl+shift+p</p>
+</li>
+<li>
+<p>Mac：Cmd+shift+p
+打开面板输入babel安装</p>
+</li>
+</ul>
+<p>配置</p>
+<ul>
+<li>
+<p>打开.js, .jsx 后缀的文件;</p>
+</li>
+<li>
+<p>打开菜单view， Syntax -&gt; Open all with current extension as&hellip; -&gt; Babel -&gt; JavaScript (Babel)，选择babel为默认 javascript 打开syntax</p>
+</li>
+</ul>
+<h2 id="sublimelinter-jsxhinthttpspackagecontroliopackagessublimelinter-jsxhint"><a href="https://packagecontrol.io/packages/SublimeLinter-jsxhint">sublimeLinter-jsxhint</a></h2>
+<p>JSX 代码审查，实时提示语法错误, 帮助快速定位错误点.
+<figure class="max-w-2xl mx-auto overflow-hidden">
+    
+        <img alt="代码提示" src="http://segmentfault.com/img/bVoMHA" />
+    
+    <figcaption class="p-2 text-center">代码提示 Title</figcaption>
+</figure>
+安装</p>
+<ul>
+<li>
+<p>PC上ctrl+shift+p（MacCmd+shift+p）打开面板输入sublimeLinter-jsx安装(依赖于 sublimeLinter)</p>
+</li>
+<li>
+<p>安装 node.js</p>
+</li>
+<li>
+<p>安装 <a href="https://github.com/STRML/JSXHint/">jsxhint</a></p>
+</li>
+</ul>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g jsxhint
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="修改-emmethttpdocsemmetio-兼容jsx-文件">修改 <a href="http://docs.emmet.io/">Emmet</a> 兼容jsx 文件</h2>
+<p>emmet 作为前端开发必备插件之一非常方便快捷，通过修改默认的 sublime就可以在 jsx 文件中快速通过 emmet 编写自定义组件。
+<figure class="max-w-2xl mx-auto overflow-hidden">
+    
+        <img alt="emmet" src="http://segmentfault.com/img/bVoMHB" />
+    
+    <figcaption class="p-2 text-center">emmet Title</figcaption>
+</figure>
+安装</p>
+<ul>
+<li>PC上ctrl+shift+p（MacCmd+shift+p）打开面板输入emmet安装</li>
+</ul>
+<p>使用方法</p>
+<p>打开 preferences -&gt; Key bindings - Users，把下面代码复制到[]内部。</p>
+<pre><code>{
+  &quot;keys&quot;: [
+    &quot;super+e&quot;
+  ],
+  &quot;args&quot;: {
+    &quot;action&quot;: &quot;expand_abbreviation&quot;
+  },
+  &quot;command&quot;: &quot;run_emmet_action&quot;,
+  &quot;context&quot;: [{
+    &quot;key&quot;: &quot;emmet_action_enabled.expand_abbreviation&quot;
+  }]
+},
+{
+  &quot;keys&quot;: [&quot;tab&quot;],
+  &quot;command&quot;: &quot;expand_abbreviation_by_tab&quot;,
+  &quot;context&quot;: [{
+    &quot;operand&quot;: &quot;source.js&quot;,
+    &quot;operator&quot;: &quot;equal&quot;,
+    &quot;match_all&quot;: true,
+    &quot;key&quot;: &quot;selector&quot;
+  }, {
+    &quot;key&quot;: &quot;preceding_text&quot;,
+    &quot;operator&quot;: &quot;regex_contains&quot;,
+    &quot;operand&quot;: &quot;(\\b(a\\b|div|span|p\\b|button)(\\.\\w*|&gt;\\w*)?([^}]*?}$)?)&quot;,
+    &quot;match_all&quot;: true
+  }, {
+    &quot;key&quot;: &quot;selection_empty&quot;,
+    &quot;operator&quot;: &quot;equal&quot;,
+    &quot;operand&quot;: true,
+    &quot;match_all&quot;: true
+  }]
+}    
+</code></pre>
+<p>使用super+e触发 emmet；正则判断用 a，div，span，p，button标签默认tab 触发；默认 class 修改为 className。</p>
+<p>注：</p>
+<ul>
+<li>
+<p>supre+e 在 PC 上指的是win+e（pc 建议修改为emmet 默认按键 ctrl+e）,在 mac 上指的是cmd+e</p>
+</li>
+<li>
+<p>以上规则来源于<a href="http://stackoverflow.com/questions/26089802/in-sublime-text-3-how-do-you-enable-emmet-for-jsx-files">StackOverflow</a>，正则小有修改</p>
+</li>
+</ul>
+<h2 id="jsformathttpsgithubcomjdc0589jsformat-格式化-js-代码"><a href="https://github.com/jdc0589/JsFormat">JsFormat</a> 格式化 js 代码</h2>
+<p>jsformat 是 sublime 上 js 格式化比较好用的插件之一，通过修改它的e4x 属性可以使它支持 jsx。</p>
+<p>安装</p>
+<ul>
+<li>PC上ctrl+shift+p（MacCmd+shift+p）打开面板输入JsFormat安装.
+使用</li>
+</ul>
+<p>打开preferences -&gt; Package Settings -&gt; JsFormat -&gt; Setting - Users,输入以下代码：</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#d14">&#34;e4x&#34;</span>: true,
+</span></span><span style="display:flex;"><span>  // jsformat options
+</span></span><span style="display:flex;"><span>  <span style="color:#d14">&#34;format_on_save&#34;</span>: true,
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>即可保存时自动格式化，并支持 jsx 类型文件.</p>
+<h2 id="编译-jsx">编译 jsx</h2>
+<ul>
+<li>使用<a href="https://packagecontrol.io/packages/Babel">babel-sublime</a></li>
+<li>带有编译 jsx 的命令 babel build。使用 babel 编译 jsx 也由 React 项目官方引用。该命令依赖于 node 包 <a href="https://babeljs.io/">babel</a>。babel 同时也支持 ES6的新语法经过编译在浏览器中运用。</li>
+</ul>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install -g babel
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>在 sublime 中使用ctrl+shift+p打开面板输入babel transform自动编译成 react.js 文件</p>
+<ul>
+<li>使用自动化构建工具（gulp|grunt 等）
+以 <a href="http://gulpjs.com/">gulp</a> 为例(依赖 <a href="http://gulpjs.com/">gulp</a>,需提前安装)：</li>
+</ul>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install gulp-babel
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/**
+</span></span><span style="display:flex;"><span>* babel
+</span></span><span style="display:flex;"><span>*/
+</span></span><span style="display:flex;"><span>var <span style="color:#008080">gulp</span> <span style="color:#000;font-weight:bold">=</span> require<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;gulp&#39;</span><span style="color:#000;font-weight:bold">)</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#008080">babel</span> <span style="color:#000;font-weight:bold">=</span> require<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;gulp-babel&#39;</span><span style="color:#000;font-weight:bold">)</span>;
+</span></span><span style="display:flex;"><span>gulp.task<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;babel&#39;</span>, <span style="color:#000;font-weight:bold">function</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">return</span> gulp.src<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;./src/**/*.jsx&#39;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>    .pipe<span style="color:#000;font-weight:bold">(</span>babel<span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span>    .pipe<span style="color:#000;font-weight:bold">(</span>gulp.dest<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;./dist&#39;</span><span style="color:#000;font-weight:bold">))</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">})</span>;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>在命令行中输入 gulp babel 运行
+配合 BrowserSync 使用可以实时监测改动并同步刷新多平台上得浏览器。</li>
+</ul>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>npm install gulp-babel gulp-plumber gulp-notify gulp-cached browser-sync run-sequence
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/**
+</span></span><span style="display:flex;"><span>*  babel
+</span></span><span style="display:flex;"><span>*/
+</span></span><span style="display:flex;"><span>var <span style="color:#008080">gulp</span> <span style="color:#000;font-weight:bold">=</span> require<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;gulp&#39;</span><span style="color:#000;font-weight:bold">)</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#008080">babel</span> <span style="color:#000;font-weight:bold">=</span> require<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;gulp-babel&#39;</span><span style="color:#000;font-weight:bold">)</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#008080">bs</span> <span style="color:#000;font-weight:bold">=</span> require<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;browser-sync&#39;</span><span style="color:#000;font-weight:bold">)</span>.create<span style="color:#000;font-weight:bold">()</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#008080">reload</span> <span style="color:#000;font-weight:bold">=</span> bs.reload,
+</span></span><span style="display:flex;"><span>  <span style="color:#008080">runSequence</span> <span style="color:#000;font-weight:bold">=</span> require<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;run-sequence&#39;</span><span style="color:#000;font-weight:bold">)</span>.use<span style="color:#000;font-weight:bold">(</span>gulp<span style="color:#000;font-weight:bold">)</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#008080">src</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;src&#39;</span>, //源目录路径
+</span></span><span style="display:flex;"><span>  <span style="color:#008080">dist</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#39;dist&#39;</span>; //输出路径
+</span></span><span style="display:flex;"><span>gulp.task<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;babel&#39;</span>, <span style="color:#000;font-weight:bold">function</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  var <span style="color:#008080">onError</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span><span style="color:#000;font-weight:bold">(</span>err<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    notify.onError<span style="color:#000;font-weight:bold">({</span>
+</span></span><span style="display:flex;"><span>      title: <span style="color:#d14">&#34;Gulp&#34;</span>,
+</span></span><span style="display:flex;"><span>      subtitle: <span style="color:#d14">&#34;Failure!&#34;</span>,
+</span></span><span style="display:flex;"><span>      message: <span style="color:#d14">&#34;Error: &lt;%= error.message %&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>      sound: <span style="color:#d14">&#34;Beep&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">})(</span>err<span style="color:#000;font-weight:bold">)</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">return</span> gulp.src<span style="color:#000;font-weight:bold">(</span>src + <span style="color:#d14">&#39;/**/*.jsx&#39;</span><span style="color:#000;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>    .pipe<span style="color:#000;font-weight:bold">(</span>cached<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;react&#39;</span><span style="color:#000;font-weight:bold">))</span> //把所有东西放入缓存中，每次只编译修改过的文件
+</span></span><span style="display:flex;"><span>    .pipe<span style="color:#000;font-weight:bold">(</span>plumber<span style="color:#000;font-weight:bold">({</span> //发生错误时不会中断 gulp 的流程，同时触发 notify 消息提示
+</span></span><span style="display:flex;"><span>      errorHandler: onError
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}))</span>
+</span></span><span style="display:flex;"><span>    .pipe<span style="color:#000;font-weight:bold">(</span>babel<span style="color:#000;font-weight:bold">())</span>
+</span></span><span style="display:flex;"><span>    .pipe<span style="color:#000;font-weight:bold">(</span>gulp.dest<span style="color:#000;font-weight:bold">(</span>dist<span style="color:#000;font-weight:bold">))</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">})</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// Start the server
+</span></span><span style="display:flex;"><span>gulp.task<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;bs&#39;</span>, <span style="color:#000;font-weight:bold">function</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  var files;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#008080">files</span> <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[</span>
+</span></span><span style="display:flex;"><span>    src + <span style="color:#d14">&#39;/**/*.+(html|php|js|css|png|jpg|svg|gif)&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">]</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  bs.init<span style="color:#000;font-weight:bold">(</span>files, <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  server: <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    baseDir: src,
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">})</span>;
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">})</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>gulp.task<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;server&#39;</span>, <span style="color:#000;font-weight:bold">[</span><span style="color:#d14">&#39;babel&#39;</span>,<span style="color:#d14">&#39;bs&#39;</span><span style="color:#000;font-weight:bold">]</span>, <span style="color:#000;font-weight:bold">function</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  gulp.watch<span style="color:#000;font-weight:bold">(</span>src + <span style="color:#d14">&#39;/**/*.jsx&#39;</span>, <span style="color:#000;font-weight:bold">function</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    runSequence<span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#39;babel&#39;</span>, reload<span style="color:#000;font-weight:bold">)</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">})</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">})</span><span style="color:#d14">```</span>
+</span></span><span style="display:flex;"><span>在命令行中输入 gulp server 运行。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>或者使用 sublime 自带的 build 工具，选择Tools -&gt; Build System -&gt; New Build System
+</span></span><span style="display:flex;"><span>输入:
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>{
+&ldquo;shell_cmd&rdquo;: &ldquo;gulp server &ndash;cwd $file_path&rdquo;
+}```
+并保存为 gulpBabel.sublime-build(名称随意，保持.sublime-build后缀名)，存放到Packages - Users文件夹里面，在 sublime 中使用ctrl+shift+b（或Tools -&gt; Build With ..）打开 build 面板，选择刚刚输入的名称，在这里是gulpBabel运行。</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="/">星辰</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="/post/sublime-text-3%E6%90%AD%E5%BB%BA-react.js-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/">/post/sublime-text-3%E6%90%AD%E5%BB%BA-react.js-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>. 进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>相关文章</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/react-native%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">ReactNative环境搭建</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/sublimetext' target="_blank">sublimetext</a></li>
+                
+                <li><a href='/tags/react' target="_blank">react</a></li>
+                
+                <li><a href='/tags/%E6%90%AD%E5%BB%BA' target="_blank">搭建</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "rplees/rplees.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+    
+    
+
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2023 <a href="/">星辰的博客 By 星辰</a>
+        
+        | <a rel="nofollow" target="_blank" href="http://beian.miit.gov.cn/">浙ICP备19033301号-2</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XR8PW43DNT"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-XR8PW43DNT', { 'anonymize_ip': false });
+}
+</script>
+
+<style type="text/css">
+div.highlight {
+    position: relative;
+    margin: 1em 0px;
+}
+
+.copy-code {
+    display: none;
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(78, 78, 78, 0.8);
+    border-radius: var(--radius);
+    padding: 0 5px;
+    font: inherit;
+    user-select: none;
+    cursor: pointer;
+    border: 0;
+    --radius: 8px;
+}
+
+div.highlight:hover .copy-code,pre:hover .copy-code {
+    display: block;
+}
+
+</style>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='/search' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="/post/JS%E9%9D%A2%E8%AF%95%E9%A2%98/" title="JS面试题" target="_blank">JS面试题</a>
+    </li>
+    
+    <li>
+        <a href="/post/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E6%96%87%E6%A1%A3/" title="后台技术架构文档" target="_blank">后台技术架构文档</a>
+    </li>
+    
+    <li>
+        <a href="/post/HTML%E9%9D%A2%E8%AF%95%E9%A2%98/" title="前端开发面试题" target="_blank">前端开发面试题</a>
+    </li>
+    
+    <li>
+        <a href="/post/ss%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/" title="SS服务端搭建" target="_blank">SS服务端搭建</a>
+    </li>
+    
+    <li>
+        <a href="/post/%E6%90%AD%E5%BB%BA/" title="搭建" target="_blank">搭建</a>
+    </li>
+    
+    <li>
+        <a href="/post/react-native%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" title="ReactNative技术分享" target="_blank">ReactNative技术分享</a>
+    </li>
+    
+    <li>
+        <a href="/post/reactjs%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB/" title="ReactJS技术分享" target="_blank">ReactJS技术分享</a>
+    </li>
+    
+    <li>
+        <a href="/post/ngrok%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%90%AD%E5%BB%BA%E4%B8%8Elinux-mac-window%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E7%BC%96%E8%AF%91/" title="Ngrok服务端搭建与linux\mac\window客户端的编译" target="_blank">Ngrok服务端搭建与linux\mac\window客户端的编译</a>
+    </li>
+    
+    <li>
+        <a href="/post/Java%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E9%A2%98/" title="Java工程师面试题" target="_blank">Java工程师面试题</a>
+    </li>
+    
+    <li>
+        <a href="/post/Java%E5%B7%A5%E7%A8%8B%E5%B8%88%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%9C%89%E7%AD%94%E6%A1%88/" title="Java工程师面试题-有答案" target="_blank">Java工程师面试题-有答案</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title" style="color:red">福利派送</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a href="https://www.aliyun.com/minisite/goods?userCode=jdg9oj97&amp;share_source=copy_link" title="【2019双12】ALL IN CLoud 低至1折" target="_blank" style="color:red">
+                
+                    <img src="https://img.alicdn.com/tfs/TB1_rYHo7P2gK0jSZPxXXacQpXa-690-388.jpg">
+                
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="/categories/HTML/">HTML (1)</a></li>
+    
+    <li><a href="/categories/Java/">Java (1)</a></li>
+    
+    <li><a href="/categories/Java/">Java (2)</a></li>
+    
+    <li><a href="/categories/JavaScript/">JavaScript (1)</a></li>
+    
+    <li><a href="/categories/linux/">linux (2)</a></li>
+    
+    <li><a href="/categories/ngrok/">ngrok (1)</a></li>
+    
+    <li><a href="/categories/react/">react (1)</a></li>
+    
+    <li><a href="/categories/react-native/">react-native (3)</a></li>
+    
+    <li><a href="/categories/ss/">ss (1)</a></li>
+    
+    <li><a href="/categories/sublimetext/">sublimetext (1)</a></li>
+    
+    <li><a href="/categories/%E5%90%8E%E5%8F%B0/">后台 (1)</a></li>
+    
+    <li><a href="/categories/%E6%8A%80%E6%9C%AF/">技术 (8)</a></li>
+    
+    <li><a href="/categories/%E6%90%AD%E5%BB%BA/">搭建 (4)</a></li>
+    
+    <li><a href="/categories/%E6%9E%B6%E6%9E%84/">架构 (1)</a></li>
+    
+    <li><a href="/categories/%E9%9D%A2%E8%AF%95/">面试 (4)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="/tags/HTML/">HTML</a>
+    
+    <a href="/tags/Java/">Java</a>
+    
+    <a href="/tags/Java/">Java</a>
+    
+    <a href="/tags/JavaScript/">JavaScript</a>
+    
+    <a href="/tags/linux/">linux</a>
+    
+    <a href="/tags/ngrok/">ngrok</a>
+    
+    <a href="/tags/react/">react</a>
+    
+    <a href="/tags/react-native/">react-native</a>
+    
+    <a href="/tags/ss/">ss</a>
+    
+    <a href="/tags/sublimetext/">sublimetext</a>
+    
+    <a href="/tags/%E5%90%8E%E5%8F%B0/">后台</a>
+    
+    <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>
+    
+    <a href="/tags/%E6%90%AD%E5%BB%BA/">搭建</a>
+    
+    <a href="/tags/%E6%9E%B6%E6%9E%84/">架构</a>
+    
+    <a href="/tags/%E9%9D%A2%E8%AF%95/">面试</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.rplees.com" title="星辰的博客">星辰</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

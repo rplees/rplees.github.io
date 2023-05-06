@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>架构 on 星辰的博客</title>
+    <link>/tags/%E6%9E%B6%E6%9E%84/</link>
+    <description>Recent content in 架构 on 星辰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="/tags/%E6%9E%B6%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>后台技术架构文档</title>
+      <link>/post/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E6%96%87%E6%A1%A3/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/%E5%90%8E%E5%8F%B0%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E6%96%87%E6%A1%A3/</guid>
+      <description>后台技术架构文档-精洲华娱 文档归公司内部使用 开发模式- 小步快走，快速迭代 使用敏捷开发模式开发,敏捷方法是试图通过小型的. 自我管理的团队用短小的合作发布周期来鼓励迭代式软件开发方法.软件的质量贯穿敏捷软件开发每一个阶段.且非常重要,来保证能在每一个迭代周期内及早是的发现并及时相应消</description>
+    </item>
+    
+  </channel>
+</rss>

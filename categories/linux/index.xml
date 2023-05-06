@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on 星辰的博客</title>
+    <link>/categories/linux/</link>
+    <description>Recent content in linux on 星辰的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 18 Mar 2017 15:25:58 +0000</lastBuildDate><atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SS服务端搭建</title>
+      <link>/post/ss%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Sat, 18 Mar 2017 15:25:58 +0000</pubDate>
+      
+      <guid>/post/ss%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BA/</guid>
+      <description>SS服务端搭建 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 python --version yum install python-setuptools &amp;amp;&amp;amp; easy_install pip pip install shadowsocks yum install m2crypto vim /etc/shadowsocks.json #编辑shadowsocks.json的内容主要是IP与密码 { &amp;#34;server&amp;#34;:&amp;#34;本机外网IP&amp;#34;, &amp;#34;server_port&amp;#34;:8388, &amp;#34;local_address&amp;#34;: &amp;#34;127.0.0.1&amp;#34;, &amp;#34;local_port&amp;#34;:1080, &amp;#34;password&amp;#34;:&amp;#34;密码&amp;#</description>
+    </item>
+    
+    <item>
+      <title>Ngrok服务端搭建与linux\mac\window客户端的编译</title>
+      <link>/post/ngrok%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%90%AD%E5%BB%BA%E4%B8%8Elinux-mac-window%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Tue, 22 Mar 2016 20:20:58 +0000</pubDate>
+      
+      <guid>/post/ngrok%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%90%AD%E5%BB%BA%E4%B8%8Elinux-mac-window%E5%AE%A2%E6%88%B7%E7%AB%AF%E7%9A%84%E7%BC%96%E8%AF%91/</guid>
+      <description>ngrok 服务编译的前提 1 2 3 wget https://storage.googleapis.com/golang/go1.4.3.linux-amd64.tar.gz sudo tar -C /usr/local -xzf go1.4.3.linux-amd64.tar.gz export PATH=$PATH:/usr/local/go/bin ngrok 服务端 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 cd /usr/local git clone https://github.com/inconshreveable/ngrok.git cd ngrok openssl genrsa -out rootCA.key 2048; openssl req -x509 -new -nodes -key rootCA.key -subj &amp;#34;/CN=ngrok.allji.cn&amp;#34; -days 5000 -out rootCA.pem; openssl genrsa -out device.key 2048; openssl req -new -key device.key -subj &amp;#34;/CN=ngrok.allji.cn&amp;#34; -out device.csr; openssl x509 -req -in device.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out device.crt -days 5000; //copy cp rootCA.pem ../ngrok/assets/client/tls/ngrokroot.crt; cp device.crt ../ngrok/assets/server/tls/snakeoil.crt; cp device.key ../ngrok/assets/server/tls/snakeoil.key; make release-server 客户端 windows 1 2 3 4 cd /usr/local/go/src/; GOOS=windows GOARCH=386 CGO_ENABLED=0 ./make.bash; cd /usr/local/ngrok; GOOS=windows GOARCH=386 make release-client; 客户端 linux 1 make release-client; 客户端 mac 1 2 3</description>
+    </item>
+    
+  </channel>
+</rss>
