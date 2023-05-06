@@ -6,7 +6,16 @@
     <description>Recent content in Posts on 星辰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IProxy代理服务器</title>
+      <link>/post/iproxy/</link>
+      <pubDate>Sat, 06 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/post/iproxy/</guid>
+      <description>项目地址 Github Gitee 简介 IProxy 是一个 JAVA 编写的 HTTP 代理服务器类库，支持 HTTP、HTTPS、Websocket 协议，并且支持 MITM(中间人攻击)，可以对 HTTP、HTTPS 协议的报文进行捕获和篡改。 使用 1 2 3 4 5 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.rplees&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;iproxy&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.1.3&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; 示例 普通 HTTP 代理服务器 1 new ServerStarter().start(1113); 中间人 HTTP 代理服务器 以下是一个中间人攻击演示，在</description>
+    </item>
+    
     <item>
       <title>JS面试题</title>
       <link>/post/JS%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
