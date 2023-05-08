@@ -6,7 +6,16 @@
     <description>Recent content in Tags on 星辰的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 06 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 08 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nginx</title>
+      <link>/tags/Nginx/</link>
+      <pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/Nginx/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>HTTP</title>
       <link>/tags/HTTP/</link>
