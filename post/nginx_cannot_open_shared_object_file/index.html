@@ -201,90 +201,44 @@
         
         
         <div class="post-content">
-            <p>nginx检查报错 error while loading shared libraries: libprofiler.so.0: cannot open shared object file</p>
+            <h1 id="nginx检查报错-error-while-loading-shared-libraries-libprofilerso0-cannot-open-shared-object-file">nginx检查报错 error while loading shared libraries: libprofiler.so.0: cannot open shared object file</h1>
 <p>在centos7.3上编译安装nginx 启动测试出错</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>root@web02 local<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># /usr/local/nginx/sbin/nginx -t</span>
-</span></span><span style="display:flex;"><span>/usr/local/nginx/sbin/nginx: error <span style="color:#000;font-weight:bold">while</span> loading shared libraries: libprofiler.so.0: cannot open shared object file: No such file or directory
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>从错误看出是缺少lib文件导致，进一步查看下　</p>
-<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span>root@web02 local<span style="color:#000;font-weight:bold">]</span><span style="color:#998;font-style:italic"># ldd $(which /usr/local/nginx/sbin/nginx)</span>
-</span></span><span style="display:flex;"><span>	linux-vdso.so.1 <span style="color:#000;font-weight:bold">=</span>&gt;  <span style="color:#000;font-weight:bold">(</span>0x00007ffdd918e000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libdl.so.2 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libdl.so.2 <span style="color:#000;font-weight:bold">(</span>0x00007fea2b1c8000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libpthread.so.0 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libpthread.so.0 <span style="color:#000;font-weight:bold">(</span>0x00007fea2afac000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libcrypt.so.1 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libcrypt.so.1 <span style="color:#000;font-weight:bold">(</span>0x00007fea2ad74000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libpcre.so.1 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libpcre.so.1 <span style="color:#000;font-weight:bold">(</span>0x00007fea2ab12000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libssl.so.10 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libssl.so.10 <span style="color:#000;font-weight:bold">(</span>0x00007fea2a8a0000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libcrypto.so.10 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libcrypto.so.10 <span style="color:#000;font-weight:bold">(</span>0x00007fea2a43e000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libz.so.1 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libz.so.1 <span style="color:#000;font-weight:bold">(</span>0x00007fea2a228000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libgd.so.2 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libgd.so.2 <span style="color:#000;font-weight:bold">(</span>0x00007fea29fe1000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libprofiler.so.0 <span style="color:#000;font-weight:bold">=</span>&gt; not found
-</span></span><span style="display:flex;"><span>	libc.so.6 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libc.so.6 <span style="color:#000;font-weight:bold">(</span>0x00007fea29c1d000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	/lib64/ld-linux-x86-64.so.2 <span style="color:#000;font-weight:bold">(</span>0x00007fea2b3d6000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libfreebl3.so <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libfreebl3.so <span style="color:#000;font-weight:bold">(</span>0x00007fea29a1a000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libgssapi_krb5.so.2 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libgssapi_krb5.so.2 <span style="color:#000;font-weight:bold">(</span>0x00007fea297cc000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libkrb5.so.3 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libkrb5.so.3 <span style="color:#000;font-weight:bold">(</span>0x00007fea294e4000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libcom_err.so.2 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libcom_err.so.2 <span style="color:#000;font-weight:bold">(</span>0x00007fea292e0000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libk5crypto.so.3 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libk5crypto.so.3 <span style="color:#000;font-weight:bold">(</span>0x00007fea290ac000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libXpm.so.4 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libXpm.so.4 <span style="color:#000;font-weight:bold">(</span>0x00007fea28e9a000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libX11.so.6 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libX11.so.6 <span style="color:#000;font-weight:bold">(</span>0x00007fea28b5c000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libjpeg.so.62 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libjpeg.so.62 <span style="color:#000;font-weight:bold">(</span>0x00007fea28906000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libfontconfig.so.1 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libfontconfig.so.1 <span style="color:#000;font-weight:bold">(</span>0x00007fea286c9000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libfreetype.so.6 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libfreetype.so.6 <span style="color:#000;font-weight:bold">(</span>0x00007fea28423000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libpng15.so.15 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libpng15.so.15 <span style="color:#000;font-weight:bold">(</span>0x00007fea281f7000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libm.so.6 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libm.so.6 <span style="color:#000;font-weight:bold">(</span>0x00007fea27ef5000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libkrb5support.so.0 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libkrb5support.so.0 <span style="color:#000;font-weight:bold">(</span>0x00007fea27ce7000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libkeyutils.so.1 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libkeyutils.so.1 <span style="color:#000;font-weight:bold">(</span>0x00007fea27ae2000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libresolv.so.2 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libresolv.so.2 <span style="color:#000;font-weight:bold">(</span>0x00007fea278c8000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libxcb.so.1 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libxcb.so.1 <span style="color:#000;font-weight:bold">(</span>0x00007fea2769f000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libexpat.so.1 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libexpat.so.1 <span style="color:#000;font-weight:bold">(</span>0x00007fea27475000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libselinux.so.1 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libselinux.so.1 <span style="color:#000;font-weight:bold">(</span>0x00007fea2724e000<span style="color:#000;font-weight:bold">)</span>
-</span></span><span style="display:flex;"><span>	libXau.so.6 <span style="color:#000;font-weight:bold">=</span>&gt; /lib64/libXau.so.6 <span style="color:#000;font-weight:bold">(</span>0x00007fea27049000<span style="color:#000;font-weight:bold">)</span>　　
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>可以看出libprofiler.so.0并没有找到
+<pre tabindex="0"><code>[root@web02 local]# /usr/local/nginx/sbin/nginx -t
+/usr/local/nginx/sbin/nginx: error while loading shared libraries: libprofiler.so.0: cannot open shared object file: No such file or directory
+</code></pre><p>从错误看出是缺少lib文件导致，进一步查看下　</p>
+<pre tabindex="0"><code>[root@web02 local]# ldd $(which /usr/local/nginx/sbin/nginx)
+	linux-vdso.so.1 =&gt;  (0x00007ffdd918e000)
+	libdl.so.2 =&gt; /lib64/libdl.so.2 (0x00007fea2b1c8000)
+	libpthread.so.0 =&gt; /lib64/libpthread.so.0 (0x00007fea2afac000)
+	libcrypt.so.1 =&gt; /lib64/libcrypt.so.1 (0x00007fea2ad74000)
+	libpcre.so.1 =&gt; /lib64/libpcre.so.1 (0x00007fea2ab12000)
+	libssl.so.10 =&gt; /lib64/libssl.so.10 (0x00007fea2a8a0000)
+	libcrypto.so.10 =&gt; /lib64/libcrypto.so.10 (0x00007fea2a43e000)
+	libz.so.1 =&gt; /lib64/libz.so.1 (0x00007fea2a228000)
+	libgd.so.2 =&gt; /lib64/libgd.so.2 (0x00007fea29fe1000)
+	libprofiler.so.0 =&gt; not found
+	libc.so.6 =&gt; /lib64/libc.so.6 (0x00007fea29c1d000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007fea2b3d6000)
+	libfreebl3.so =&gt; /lib64/libfreebl3.so (0x00007fea29a1a000)
+	libgssapi_krb5.so.2 =&gt; /lib64/libgssapi_krb5.so.2 (0x00007fea297cc000)
+	libkrb5.so.3 =&gt; /lib64/libkrb5.so.3 (0x00007fea294e4000)
+	libcom_err.so.2 =&gt; /lib64/libcom_err.so.2 (0x00007fea292e0000)
+	libk5crypto.so.3 =&gt; /lib64/libk5crypto.so.3 (0x00007fea290ac000)
+	libXpm.so.4 =&gt; /lib64/libXpm.so.4 (0x00007fea28e9a000)
+	libX11.so.6 =&gt; /lib64/libX11.so.6 (0x00007fea28b5c000)
+	libjpeg.so.62 =&gt; /lib64/libjpeg.so.62 (0x00007fea28906000)
+	libfontconfig.so.1 =&gt; /lib64/libfontconfig.so.1 (0x00007fea286c9000)
+	libfreetype.so.6 =&gt; /lib64/libfreetype.so.6 (0x00007fea28423000)
+	libpng15.so.15 =&gt; /lib64/libpng15.so.15 (0x00007fea281f7000)
+	libm.so.6 =&gt; /lib64/libm.so.6 (0x00007fea27ef5000)
+	libkrb5support.so.0 =&gt; /lib64/libkrb5support.so.0 (0x00007fea27ce7000)
+	libkeyutils.so.1 =&gt; /lib64/libkeyutils.so.1 (0x00007fea27ae2000)
+	libresolv.so.2 =&gt; /lib64/libresolv.so.2 (0x00007fea278c8000)
+	libxcb.so.1 =&gt; /lib64/libxcb.so.1 (0x00007fea2769f000)
+	libexpat.so.1 =&gt; /lib64/libexpat.so.1 (0x00007fea27475000)
+	libselinux.so.1 =&gt; /lib64/libselinux.so.1 (0x00007fea2724e000)
+	libXau.so.6 =&gt; /lib64/libXau.so.6 (0x00007fea27049000)　　
+</code></pre><p>可以看出libprofiler.so.0并没有找到
 找出源文件</p>
 <pre tabindex="0"><code>find / -type f -name &#34;libprofiler.so*&#34;　
 </code></pre><p>做软连接</p>
